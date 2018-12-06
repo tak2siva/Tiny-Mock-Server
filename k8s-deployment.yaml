@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tiny-mock-server
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tiny-mock-server
+  template:
+    metadata:
+      labels:
+        app: tiny-mock-server
+    spec:
+      containers:
+      - name: tiny-mock-server
+        image: tak2siva/tiny-mock-server
+        env:
+          - name: PORT
+            value: "9080"
+          - name: CONTENT
+            value: "hello from mock-server"      
+        ports:
+        - containerPort: 9080
