@@ -16,10 +16,15 @@ Date: Sun, 23 Sep 2018 13:06:14 GMT
 Content-Length: 5
 Content-Type: text/plain; charset=utf-8
 
-hello%
+hello
 ```
 
 ## Args
 * PORT (default 9901)
 * CODE (default 200)
 * CONTENT
+* PING_HOST         ## poll the url in given interval
+* PING_INTERVAL     ## default 1 second
+* CALLBACK_URL      ## each requests can have a callback url (also propagates headers)
+
+

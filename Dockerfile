@@ -1,6 +1,7 @@
 FROM golang:latest as builder
 
 WORKDIR /go
+RUN go get -u gopkg.in/resty.v1
 ADD server.go .
 RUN CGO_ENABLED=0 GOOS=linux go build -o server server.go
 
